@@ -76,6 +76,16 @@ Route::get('view',function (){
    return view('welcome');
 });
 
+//Route::get('member/info','MemberController@info');
+
+//Route::get('member/info',[
+//    'uses'=>'MemberController@info',
+//    'as'=>'memberinfo'
+//]);
+
+Route::any('member/{id}',[
+    'uses' => 'MemberController@info'
+])->where('id','[0-9]+');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
